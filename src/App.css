@@ -77,3 +77,94 @@
   border: 2px solid #ffffff; 
   color: #1f2933; 
 }
+
+/* Homepage Styling */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh; 
+  padding: 10px;
+  background-color: #f3f4f6;
+}
+
+.home-card {
+  background-color: #111827;
+  padding: 30px 30px;  
+  border-radius: 12px;
+  width: 400px; 
+  max-width: 100%;
+  color: #f3f4f6;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main title */
+.home-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  white-space: pre-line;
+}
+
+.title-greeting {
+  color: #3b82f6;
+  font-size: 1.5rem;
+}
+
+/* Intro paragraph */
+.home-intro {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+/* Features section */
+.home-features {
+  margin-bottom: 32px;
+}
+
+.feature-label {
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+/* Section subtitles */
+.home-subtitle {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Start button */
+.home-start-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+  width: 100px;
+  text-align: center;
+}
+
+.home-start-button:hover {
+  background-color: #ffffff;
+  color: #1f2933;
+}
+
+/* Features List */
+.home-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.home-features li {
+  margin-bottom: 8px;
+  white-space: pre-line;
+}
