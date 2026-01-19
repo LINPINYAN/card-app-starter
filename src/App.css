@@ -7,3 +7,73 @@
   - buttons/forms
   - spacing and responsiveness
 */
+
+/* Navbar Styling */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #1f2933;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Common button style for both */
+.nav-link.button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Card List button */
+.cardlist-btn {
+  background-color: #1f2933;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.cardlist-btn:hover {
+  background-color: #ffffff;
+  color: #1f2933;
+}
+
+.cardlist-btn.active {
+  background-color: #ffffff; 
+  color: #1f2933;
+  border-color: #ffffff;
+}
+
+/* Add Card button */
+.add-btn {
+  background-color: #2563eb; 
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.add-btn:hover {
+  background-color: #ffffff;
+  color: #1f2933;
+}
+
+.add-btn.active {
+  background-color: #ffffff; 
+  border: 2px solid #ffffff; 
+  color: #1f2933; 
+}
