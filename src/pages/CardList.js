@@ -9,5 +9,55 @@ export default function CardList() {
     - handle loading, busy, and error states
     - style as a grid UI */
 
-  return <main></main>;
+const [cards,setCards] = useState([]);
+const [loading, setLoading] =useState([]);
+const [error, setError] = useState([]);
+const [busy, setBusy] = useState([]);
+
+async function load(){
+  try{
+    const data = await getCards();
+    setCards(data);
+  } catch(error) {
+    console.error("Failed to load cards",error);
+    setError("Failed to load cards");
+  } finally {
+    setLoading(false)
+  }
+}
+useEffect(()=>
+  {
+    load();
+  },[])
+
+  async function handleDelete (card){
+    setBusy(true)
+    setError("")
+      try {
+        const res = await deleteCard(card.id);
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        setCards((prevCards)=> prevCards.filter((c)=>c.id !== card.id));
+      } catch (error){
+        console.error("Failed to delete card", error);
+        setError("Failed to delete card");
+      } finally {
+        setBusy(false)
+      }
+  }
+
+  return <main>
+    <div>
+      {
+        cards.map((card) => (
+        <Card 
+          key={card.id}
+          card={card}
+          onDelete={handleDelete}
+          busy={loading}
+          disabled={busy}
+          />
+      ))}
+    </div>
+  </main>;
 }
