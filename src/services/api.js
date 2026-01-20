@@ -33,7 +33,7 @@ export function updateCard(id, card) {
 
 export function deleteCard(id) {
   // TODO: implement DELETE /deletecard/:id
-  return fetch(`${API_URL}/deletecards/${id}`,{
+  return fetch(`${API_URL}/deletecard/${id}`,{
     method: "DELETE"
   });
 }
