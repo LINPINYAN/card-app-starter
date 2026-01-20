@@ -343,9 +343,9 @@
   cursor: not-allowed;
 }
 
-/* Form Container */
+/* Add & Edit Form Styling */
 .form-container {
-  background-color: #111827;   /* dark background like home-card */
+  background-color: #111827;  
   padding: 30px;
   border-radius: 12px;
   max-width: 600px;
@@ -360,7 +360,7 @@
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 24px;
-  color: #2563eb;              /* blue accent */
+  color: #2563eb;            
   text-align: center;
 }
 
