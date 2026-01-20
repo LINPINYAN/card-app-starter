@@ -11,15 +11,16 @@ export default function EditCard() {
     - style as a form UI */
 
     
-  const [card, setCard] = useState(null);
-  const [loading, setLoading] = useState(true);   // <-- define loading state
+  const [card, setCard] = useState({ card_name: "", card_pic: "" });
+  const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
+
 
     const {id} = useParams();
     const navigate = useNavigate();
 
-      useEffect(() => {
+useEffect(() => {
     async function fetchCard() {
       try {
         setLoading(true);
@@ -28,7 +29,10 @@ export default function EditCard() {
         if (!found) {
           setError("Card not found");
         } else {
-          setCard(found);
+          setCard({
+            card_name: found.card_name,
+            card_pic: found.card_pic,
+          });
         }
       } catch (err) {
         setError("Failed to load card");
@@ -40,20 +44,22 @@ export default function EditCard() {
   }, [id]);
 
   async function handleSubmit(updatedData) {
-    try {
-      setBusy(true);
-      await updateCard(id, updatedData);
-      navigate("/cards"); 
-    } catch (err) {
-      setError("Failed to update card");
-    } finally {
-      setBusy(false);
-    }
+  try {
+    setBusy(true);
+    console.log("Submitting update:", id, updatedData);
+    await updateCard(id, updatedData);
+    navigate("/cards");
+  } catch (err) {
+    console.error(err);
+    setError("Failed to update card");
+  } finally {
+    setBusy(false);
   }
+}
 
 
- return 
-    <main>
+
+return <main>
       <h1>Edit Card</h1>
 
       {loading && <p>Loading card...</p>}
@@ -61,14 +67,18 @@ export default function EditCard() {
 
       {!loading && card && (
         <CardForm
-          initialValues={card}
+          values={card}
+          onChange={setCard}
           onSubmit={handleSubmit}
-          disabled={busy}
+          busy={busy}
+          error={error}
+          submitText="Update Card"
         />
       )}
 
       {busy && <p>Updating card...</p>}
     </main>
-
+  
 }
+
 

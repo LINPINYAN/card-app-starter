@@ -23,17 +23,32 @@ export async function getCards() {
   return res.json();
 }
 
-export function addCard(card) {
+export async function addCard(card) {
   // TODO: implement POST /addcard
+  const res = await fetch(`${API_URL}/addcard`,{
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(card),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
 }
 
-export function updateCard(id, card) {
-  // TODO: implement PUT /updatecard/:id
+export async function updateCard(id, card) {
+  console.log("Sending update to API:", id, card);
+  const res = await fetch(`${API_URL}/updatecard/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(card),
+  });
+  console.log("Response status:", res.status);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
 }
 
-export function deleteCard(id) {
+export async function deleteCard(id) {
   // TODO: implement DELETE /deletecard/:id
-  return fetch(`${API_URL}/deletecards/${id}`,{
+  return fetch(`${API_URL}/deletecard/${id}`,{
     method: "DELETE"
   });
 }
