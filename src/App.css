@@ -32,7 +32,6 @@
   text-decoration: none;
 }
 
-/* Common button style for both */
 .nav-link.button {
   padding: 8px 14px;
   border-radius: 6px;
@@ -79,6 +78,7 @@
 }
 
 /* Homepage Styling */
+
 .home-container {
   display: flex;
   justify-content: center;
@@ -170,7 +170,7 @@
 }
 
 /* CardList Page Styling */
-/* CardList page */
+
 .cardlist-container {
   padding: 32px;
   max-width: 600px;
@@ -200,16 +200,15 @@
 
 /* Scrollable container */
 .card-scroll-container {
-  max-height: 500px;     /* visible height */
-  overflow-y: auto;      /* vertical scroll only */
+  max-height: 500px;    
+  overflow-y: auto;      
   overflow-x: hidden;
-  padding-right: 20px;   /* space between cards and scrollbar */
+  padding-right: 20px;   
   box-sizing: content-box; 
   padding-top: 1px;
 }
 
 /* Grid layout */
-/* Keep grid styling inside container */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -222,23 +221,23 @@
 }
 
 .card-scroll-container::-webkit-scrollbar {
-  width: 10px;          /* scrollbar width */
+  width: 10px;          
 }
 
 .card-scroll-container::-webkit-scrollbar-thumb {
-  background-color: #2563eb; /* blue thumb */
+  background-color: #2563eb; 
   border-radius: 6px;
 }
 
 .card-scroll-container::-webkit-scrollbar-track {
-  background-color: transparent; /* invisible track */
+  background-color: transparent; 
   border-radius: 6px;
 }
 
 /* Individual card */
 .card {
-  width: 220px;              /* smaller width */
-  min-height: 100px;         /* taller card */
+  width: 220px;             
+  min-height: 100px;         
   background-color: #1f2933;
   border-radius: 12px;
   overflow: hidden;
@@ -249,7 +248,7 @@
 /* Card image */
 .card-image {
   width: 100%;
-  height: 280px;     /* taller image */
+  height: 280px;    
   object-fit: cover;
 }
 
@@ -258,7 +257,7 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* spreads content */
+  justify-content: space-between; 
   flex-grow: 1;
 }
 
@@ -267,7 +266,7 @@
   transition: transform 0.2s ease;
 }
 
-/* Card header: title + edit icon on same line */
+/* Card header */
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -281,7 +280,6 @@
   cursor: pointer;
 }
 
-/* Optional: change color on hover */
 .card-edit-icon:hover {
   transform: scale(1.2);
   transition: transform 0.2s ease;
