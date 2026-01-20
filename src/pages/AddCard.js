@@ -21,7 +21,7 @@ export default function AddCard() {
       setBusy(true);
       setError(null);
       await addCard(newCard);
-      navigate("/");
+      navigate("/cards");
     } catch (err) {
       setError("Failed to add card");
     } finally {
