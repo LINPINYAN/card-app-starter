@@ -22,60 +22,31 @@ export default function CardForm({
     onSubmit(values);
   }
 
-  return <form
-  onSubmit={handleSubmit}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "1rem",
-        padding: "1rem",
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-        background: "#fafafa",
-      }}>
+  return <form onSubmit={handleSubmit}>
+  <label className="form-label" htmlFor="card_name">Card Name</label>
+  <input
+    className="form-input"
+    type="text"
+    id="card_name"
+    name="card_name"
+    value={values.card_name}
+    onChange={handleChange}
+    disabled={busy}
+  />
 
-        <label>
-        Card Name
-        <input
-          type="text"
-          name="card_name"
-          value={values.card_name || ""}
-          onChange={handleChange}
-          disabled={busy}
-          style={{ width: "100%", padding: "0.5rem" }}
-          required
-        />
-      </label>
+  <label className="form-label" htmlFor="card_pic">Card Picture URL</label>
+  <input
+    className="form-input"
+    type="url"
+    id="card_pic"
+    name="card_pic"
+    value={values.card_pic}
+    onChange={handleChange}
+    disabled={busy}
+  />
 
-      <label>
-        Card Picture URL
-        <input
-          type="text"
-          name="card_pic"
-          value={values.card_pic || ""}
-          onChange={handleChange}
-          disabled={busy}
-          style={{ width: "100%", padding: "0.5rem" }}
-          required
-        />
-      </label>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      <button
-        type="submit"
-        disabled={busy}
-        style={{
-          padding: "0.75rem",
-          backgroundColor: busy ? "#aaa" : "#007bff",
-          color: "#fff",
-          border: "none",
-          borderRadius: "4px",
-          cursor: busy ? "not-allowed" : "pointer",
-        }}
-      >
-        {busy ? "Submitting..." : submitText || "Submit"}
-      </button>
-      
-  </form>;
+  <button className="form-submit-btn" type="submit" disabled={busy}>
+    {submitText}
+  </button>
+</form>
 }

@@ -344,3 +344,82 @@
   background-color: #9ca3af;
   cursor: not-allowed;
 }
+
+/* Form Container */
+.form-container {
+  background-color: #111827;   /* dark background like home-card */
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 40px auto;
+  color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Title */
+.form-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #2563eb;              /* blue accent */
+  text-align: center;
+}
+
+/* Labels */
+.form-label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+  color: #f3f4f6;
+}
+
+/* Inputs */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #1f2933;
+  color: #f3f4f6;
+  margin-bottom: 16px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.4);
+}
+
+/* Submit Button */
+.form-submit-btn {
+  padding: 12px 24px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  width: 100%;
+}
+
+.form-submit-btn:hover {
+  background-color: #ffffff;
+  color: #1f2933;
+}
+
+/* Error & Status Messages */
+.error-text {
+  color: #ef4444;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.status-text {
+  color: #6b7280;
+  font-style: italic;
+  margin-bottom: 16px;
+}
