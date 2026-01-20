@@ -10,5 +10,36 @@ export default function AddCard() {
     - handle busy and error states
     - style as a form UI */
 
-  return <main></main>;
+  const navigate = useNavigate();
+
+  const [card, setCard] = useState({ card_name: "", card_pic: "" });
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(null);
+
+  async function handleSubmit(newCard) {
+    try {
+      setBusy(true);
+      setError(null);
+      await addCard(newCard);
+      navigate("/");
+    } catch (err) {
+      setError("Failed to add card");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+
+  return <main style={{ maxWidth: "600px", margin: "2rem auto", padding: "1rem" }}>
+      <h1>Add New Card</h1>
+
+      <CardForm
+        values={card}
+        onChange={setCard}
+        onSubmit={handleSubmit}
+        busy={busy}
+        error={error}
+        submitText="Add Card"
+      />
+    </main>
 }
