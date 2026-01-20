@@ -59,11 +59,12 @@ useEffect(() => {
 
 
 
-return <main>
-      <h1>Edit Card</h1>
+return <main className="form-container">
+      <h1 className="form-title">Edit Card</h1>
 
-      {loading && <p>Loading card...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {loading && <p className="status-text">Loading card...</p>}
+      {error && <p className="error-text">{error}</p>}
+    
 
       {!loading && card && (
         <CardForm
@@ -71,7 +72,6 @@ return <main>
           onChange={setCard}
           onSubmit={handleSubmit}
           busy={busy}
-          error={error}
           submitText="Update Card"
         />
       )}

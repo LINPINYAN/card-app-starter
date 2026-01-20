@@ -30,8 +30,8 @@ export default function AddCard() {
   }
 
 
-  return <main style={{ maxWidth: "600px", margin: "2rem auto", padding: "1rem" }}>
-      <h1>Add New Card</h1>
+  return <main className="form-container">
+      <h1 className="form-title">Add New Card</h1>
 
       <CardForm
         values={card}
