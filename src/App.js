@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
 import Home from "./pages/Home";
 import CardList from "./pages/CardList";
 import AddCard from "./pages/AddCard";
@@ -11,6 +12,7 @@ export default function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/cards" element={<CardList />} />
         <Route path="/cards/new" element={<AddCard/>}/>

@@ -1,6 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate  } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
+  function handleLogout() {
+      localStorage.removeItem("token");
+      navigate("/login"); // or "/"
+  }
+
   return (
     <header className="navbar">
       {/* Left side */}
@@ -30,6 +38,22 @@ export default function Navbar() {
         >
           + Add Card
         </NavLink>
+
+         {token ? (
+          <button
+            onClick={handleLogout}
+            className="nav-link button add-btn" 
+          >
+            Logout
+          </button>
+        ) : (
+          <NavLink
+            to="/login"
+            className="nav-link button add-btn" 
+          >
+            Login
+          </NavLink>
+        )}
       </div>
     </header>
   );
